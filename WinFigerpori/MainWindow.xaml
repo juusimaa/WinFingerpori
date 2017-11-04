@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinFigerpori"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="WinFingerpori" Height="200" Width="600">
+    
     <Grid>
-        <Button Content="OK" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle1}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Button Grid.Column="0" Content="Prev" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
+
+        <Button Grid.Column="2" Content="Next" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
     </Grid>
 </Window>

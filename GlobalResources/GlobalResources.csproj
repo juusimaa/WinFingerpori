@@ -52,7 +52,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ButtonStyles.xaml">
+    <Page Include="ComponentStyles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Colors\SolidColorBrushes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
