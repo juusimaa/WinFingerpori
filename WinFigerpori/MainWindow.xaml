@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinFigerpori"
         mc:Ignorable="d"
-        Title="WinFingerpori" Height="200" Width="600">
+        Title="WinFingerpori" Height="230" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,6 +15,8 @@
         </Grid.ColumnDefinitions>
         
         <Button Grid.Column="0" Content="Prev" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
+
+        <Image Grid.Column="0" Grid.ColumnSpan="3" Source="test_image.jpg"/>
 
         <Button Grid.Column="2" Content="Next" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
     </Grid>
