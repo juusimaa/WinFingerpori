@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WinFigerpori"
+        xmlns:local="clr-namespace:WinFigerpori.Models"
         mc:Ignorable="d"
-        Title="WinFingerpori" Height="230" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        Title="WinFingerpori" Height="230" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
+        d:DataContext="{d:DesignInstance {x:Type local:MainWindowModel}}">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,7 +17,7 @@
         
         <Button Grid.Column="0" Content="Prev" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
 
-        <Image Grid.Column="0" Grid.ColumnSpan="3" Source="test_image.jpg"/>
+        <Image Grid.Column="0" Grid.ColumnSpan="3" Source="{Binding ImagePath}"/>
 
         <Button Grid.Column="2" Content="Next" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
     </Grid>

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using WinFigerpori.Models;
 
 namespace WinFigerpori
 {
@@ -13,5 +8,13 @@ namespace WinFigerpori
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var model = new MainWindowModel();
+            var view = new MainWindow { DataContext = model };
+            view.ShowDialog();
+        }
     }
 }
