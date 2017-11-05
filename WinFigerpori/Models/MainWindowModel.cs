@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using WinFigerpori.Parsers;
 
 namespace WinFigerpori.Models
 {
@@ -18,6 +19,9 @@ namespace WinFigerpori.Models
         public MainWindowModel()
         {
             ImagePath = System.AppDomain.CurrentDomain.BaseDirectory +  @"\test_image.jpg";
+
+            var hsParser = new HsParser();
+            hsParser.ParseAsync();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -2,6 +2,8 @@
 {
     internal interface IParser
     {
-        void Parse(string address);
+        string Address { get; }
+
+        void ParseAsync();
     }
 }
