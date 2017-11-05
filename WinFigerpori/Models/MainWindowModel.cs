@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows;
 using WinFigerpori.Parsers;
 
 namespace WinFigerpori.Models
@@ -6,6 +7,7 @@ namespace WinFigerpori.Models
     internal class MainWindowModel : INotifyPropertyChanged
     {
         private string _imagePath;
+        private Visibility _loadingTextVisibility;
 
         public string ImagePath
         {
@@ -16,12 +18,30 @@ namespace WinFigerpori.Models
             }
         }
 
+        public Visibility LoadingTextVisibility
+        {
+            get { return _loadingTextVisibility; }
+            set { _loadingTextVisibility = value;
+                OnPropertyChanged(nameof(LoadingTextVisibility));
+            }
+        }
+
         public MainWindowModel()
         {
-            ImagePath = System.AppDomain.CurrentDomain.BaseDirectory +  @"\test_image.jpg";
+            UpdateImage();
+            LoadingTextVisibility = Visibility.Visible;
+        }
 
+        private async void UpdateImage()
+        {
             var hsParser = new HsParser();
-            hsParser.ParseAsync();
+            var result = await hsParser.ParseAsync();
+
+            if (result)
+            {
+                ImagePath = System.AppDomain.CurrentDomain.BaseDirectory + @"\test_image.jpg";
+                LoadingTextVisibility = Visibility.Hidden;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

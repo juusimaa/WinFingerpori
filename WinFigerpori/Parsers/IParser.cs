@@ -1,9 +1,11 @@
-﻿namespace WinFigerpori.Parsers
+﻿using System.Threading.Tasks;
+
+namespace WinFigerpori.Parsers
 {
     internal interface IParser
     {
         string Address { get; }
 
-        void ParseAsync();
+        Task<bool> ParseAsync();
     }
 }

@@ -19,6 +19,8 @@
 
         <Image Grid.Column="0" Grid.ColumnSpan="3" Source="{Binding ImagePath}"/>
 
+        <Label Grid.Column="1" Content="LOADING..." VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Visibility="{Binding LoadingTextVisibility}"/>
+
         <Button Grid.Column="2" Content="Next" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
     </Grid>
 </Window>
