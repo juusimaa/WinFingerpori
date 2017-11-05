@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using WinFigerpori.Parsers;
 
@@ -34,12 +35,13 @@ namespace WinFigerpori.Models
 
         private async void UpdateImage()
         {
-            var hsParser = new HsParser();
+            var filename = AppDomain.CurrentDomain.BaseDirectory + @"\test_image.jpg";
+            var hsParser = new HsParser { SavePath = filename };
             var result = await hsParser.ParseAsync();
 
             if (result)
             {
-                ImagePath = System.AppDomain.CurrentDomain.BaseDirectory + @"\test_image.jpg";
+                ImagePath = filename;
                 LoadingTextVisibility = Visibility.Hidden;
             }
         }

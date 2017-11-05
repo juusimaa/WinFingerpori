@@ -11,6 +11,8 @@ namespace WinFigerpori.Parsers
     {
         public string Address => @"https://www.hs.fi/fingerpori/";
 
+        public string SavePath { get; set; }
+
         public Task<bool> ParseAsync()
         {
             return Task<bool>.Factory.StartNew(() =>
@@ -35,7 +37,7 @@ namespace WinFigerpori.Parsers
 
                         using (WebClient client = new WebClient())
                         {
-                            client.DownloadFile(new Uri(@"https://" + p), @"C:\Users\jouni\Documents\Git\WinFingerpori\WinFigerpori\bin\Debug\test_image.jpg");
+                            client.DownloadFile(new Uri(@"https://" + p), SavePath);
                         }
 
                         return true;

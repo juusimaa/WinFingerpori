@@ -6,6 +6,8 @@ namespace WinFigerpori.Parsers
     {
         string Address { get; }
 
+        string SavePath { get; set; }
+
         Task<bool> ParseAsync();
     }
 }
