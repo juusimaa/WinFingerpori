@@ -2,8 +2,6 @@
 using AngleSharp.Dom;
 using AngleSharp.Parser.Html;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
