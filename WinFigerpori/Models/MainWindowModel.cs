@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Jmu.Global.Resources.Wpf;
+using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 using WinFigerpori.Parsers;
 
 namespace WinFigerpori.Models
@@ -25,6 +27,20 @@ namespace WinFigerpori.Models
             set { _loadingTextVisibility = value;
                 OnPropertyChanged(nameof(LoadingTextVisibility));
             }
+        }
+
+        public ICommand OpenSettings => new RelayCommand(param => OnOpenSettings());
+
+        public ICommand Exit => new RelayCommand(param => OnExit());
+
+        private void OnExit()
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void OnOpenSettings()
+        {
+            // TODO
         }
 
         public MainWindowModel()

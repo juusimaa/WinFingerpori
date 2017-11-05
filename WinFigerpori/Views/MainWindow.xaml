@@ -14,6 +14,14 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
+
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Settings" Command="{Binding OpenSettings}"/>
+                <Separator/>
+                <MenuItem Header="Exit" Command="{Binding Exit}"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
         
         <Button Grid.Column="0" Content="Prev" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonHoverStyle}"/>
 
